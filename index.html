@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matty &amp; Jules: Dialogue Prototype</title>
+  <meta name="description" content="A dialogue prototype built with the Character Expression Template Kit.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <!-- tokens.css is generated from tokens/tokens.json; load it first -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+  <!-- ================= TITLE SCREEN ================= -->
+  <section class="screen active" id="titleScreen">
+    <div class="cover">
+      <div class="cover-cast" aria-hidden="true">
+        <div class="cover-portrait" id="coverMatty"></div>
+        <div class="cover-portrait" id="coverJules"></div>
+      </div>
+      <p class="eyebrow">Dialogue Prototype</p>
+      <h1>Matty &amp; Jules
+        <svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 20 1, 40 9, 55 4 S 85 1, 98 5" fill="none" stroke="#B0592B" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </h1>
+      <p class="sub">Character Expression Template Kit available on itch.io</p>
+      <button class="primary-btn" id="startBtn" type="button">Start Conversation</button>
+    </div>
+  </section>
+
+  <!-- ================= DIALOGUE SCREEN ================= -->
+  <section class="screen" id="dialogueScreen">
+    <main class="stage">
+      <div class="character left"  id="charMatty" aria-hidden="true"><div class="sprite"></div><span class="name-tag">Matty</span></div>
+      <div class="character right" id="charJules" aria-hidden="true"><div class="sprite"></div><span class="name-tag">Jules</span></div>
+
+      <section class="dialogue-box" role="dialog" aria-label="Dialogue">
+        <div class="box-header from-left" id="boxHeader">
+          <span class="visually-hidden" id="speakerLabel">Matty</span>
+        </div>
+
+        <div class="box-body">
+          <p class="dialogue-text" id="dialogueText" aria-live="polite"></p>
+          <div class="box-footer">
+            <div class="nav-buttons">
+              <button class="nav-btn back" id="backBtn" type="button">◂ Back</button>
+              <button class="nav-btn next" id="nextBtn" type="button">Next ▸</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <!-- ================= END SCREEN ================= -->
+  <section class="screen" id="endScreen">
+    <div class="cover">
+      <p class="eyebrow">End of scene</p>
+      <h1>Conversation<br>Complete
+        <svg viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 20 1, 40 9, 55 4 S 85 1, 98 5" fill="none" stroke="#B0592B" stroke-width="2.5" stroke-linecap="round"/></svg>
+      </h1>
+      <p class="sub">Jules is already downloading the kit. Grab yours from the link above.</p>
+      <button class="primary-btn" id="restartBtn" type="button">Start Again</button>
+    </div>
+  </section>
+
+  <script src="assets/js/dialogue-data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/* ------------------------------------------------------------------
+   tokens.css (GENERATED FILE, do not edit by hand)
+   Source: tokens/tokens.json    Build: npm run tokens
+   ------------------------------------------------------------------ */
+
+:root {
+  /* color */
+  --color-bg: #E8DFCB; /* Warm parchment page background */
+  --color-bg-grain: #DED3B8; /* Diagonal grain stripe over the background */
+  --color-panel: #FBF6EA; /* Cards and the dialogue box */
+  --color-panel-edge: #C8BA9A; /* Hairline border on panels */
+  --color-ink: #2E2620; /* Primary text and line art */
+  --color-ink-soft: #6B5F51; /* Secondary text */
+  --color-accent: #B0592B; /* Burnt clay, primary buttons */
+  --color-accent-dark: #8C4420; /* Button hover and pressed shadow */
+  --color-accent-tint: #EFD9B8; /* Secondary button hover */
+  --color-on-accent: var(--color-panel); /* Text on accent buttons */
+  --color-line: #C9BBA0; /* Dividers */
+  --color-tag-ink: var(--color-ink); /* Name tag text and border, matches the line art */
+  --color-character-matty: #FCF6DA; /* Matty's skin fill (warm cream), used for his name tag */
+  --color-character-jules: #F7FFF2; /* Jules's skin fill (pale mint), used for her name tag */
+
+  /* font */
+  --font-display: 'Fraunces', Georgia, serif; /* Headings and name tags */
+  --font-body: 'Work Sans', system-ui, sans-serif; /* Dialogue and UI text */
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace; /* Small labels */
+
+  /* radius */
+  --radius-cover: 16px; /* Title and end screen cards */
+  --radius-panel: 14px; /* Dialogue box */
+  --radius-control: 8px; /* Buttons and name tags */
+
+  /* layout */
+  --layout-char-w: 240px; /* Portrait width */
+  --layout-char-h: calc(var(--layout-char-w) * 682 / 436); /* Portrait height, locked to one sprite cell's aspect ratio */
+  --layout-char-inset: 28px; /* Distance from the dialogue box edge to a portrait */
+  --layout-overlap: 80px; /* How far portraits sit over the dialogue box */
+  --layout-name-inset: calc(var(--layout-char-w) + var(--layout-char-inset) + 18px); /* Header padding that clears the portraits */
+
+  /* motion */
+  --motion-reveal-duration: 600ms; /* Speaker, name tag and line fade-in */
+  --motion-reveal-delay: 80ms; /* Pause before the reveal starts */
+  --motion-reveal-ease: cubic-bezier(0.22, 1, 0.36, 1); /* Easing for the reveal */
+}
+
+/* tablet: Shrink portraits so both fit beside the name tag */
+@media (max-width: 900px) {
+  :root {
+    --layout-char-w: 200px;
+    --layout-char-inset: 16px;
+  }
+}
+
+/* mobile: Portraits sit side by side above the box with no overlap */
+@media (max-width: 640px) {
+  :root {
+    --layout-overlap: 0px;
+    --layout-char-w: min(40vw, 170px);
+    --layout-name-inset: 16px;
+  }
+}

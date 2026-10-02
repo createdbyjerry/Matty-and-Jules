@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matty &amp; Jules: Design System</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
+</head>
+<body class="ds">
+  <div class="ds-page">
+
+    <header class="ds-header">
+      <a class="ds-back" href="./">◂ Play the prototype</a>
+      <h1>Design system</h1>
+      <p>Every value here is read from <code>tokens/tokens.json</code>. Change a token, run <code>npm run tokens</code>, and this page and the game both update.</p>
+    </header>
+
+    <section class="ds-section" aria-labelledby="h-color">
+      <h2 id="h-color">Color</h2>
+      <div class="ds-swatches" id="colorTokens"></div>
+    </section>
+
+    <section class="ds-section" aria-labelledby="h-type">
+      <h2 id="h-type">Typography</h2>
+      <div class="ds-type" id="fontTokens"></div>
+    </section>
+
+    <section class="ds-section" aria-labelledby="h-shape">
+      <h2 id="h-shape">Radius</h2>
+      <div class="ds-radii" id="radiusTokens"></div>
+    </section>
+
+    <section class="ds-section" aria-labelledby="h-layout">
+      <h2 id="h-layout">Layout</h2>
+      <p class="ds-note">Values shown are for the current window width. Resize to see the tablet and mobile overrides.</p>
+      <div class="ds-table-wrap"><table class="ds-table" id="layoutTokens"></table></div>
+    </section>
+
+    <section class="ds-section" aria-labelledby="h-motion">
+      <h2 id="h-motion">Motion</h2>
+      <div class="ds-table-wrap"><table class="ds-table" id="motionTokens"></table></div>
+      <div class="ds-motion-demo">
+        <p class="ds-motion-line" id="motionLine">The new speaker, their name tag and their line all fade in together.</p>
+        <button class="nav-btn back" id="replayBtn" type="button">Replay reveal</button>
+      </div>
+    </section>
+
+    <section class="ds-section" aria-labelledby="h-components">
+      <h2 id="h-components">Components</h2>
+      <div class="ds-components">
+        <div class="ds-component">
+          <h3>Buttons</h3>
+          <div class="ds-row">
+            <button class="primary-btn" type="button">Start Conversation</button>
+            <button class="nav-btn back" type="button">◂ Back</button>
+            <button class="nav-btn back" type="button" disabled>◂ Back</button>
+            <button class="nav-btn next" type="button">Next ▸</button>
+          </div>
+        </div>
+        <div class="ds-component">
+          <h3>Name tags</h3>
+          <div class="ds-row">
+            <span class="name-tag ds-static" style="--tag-color: var(--color-character-matty)">Matty</span>
+            <span class="name-tag ds-static" style="--tag-color: var(--color-character-jules)">Jules</span>
+          </div>
+        </div>
+        <div class="ds-component ds-component--wide">
+          <h3>Dialogue box</h3>
+          <div class="dialogue-box">
+            <div class="box-body">
+              <p class="dialogue-text">Good news: you don't have to suffer anymore. Look what I just found.</p>
+              <div class="box-footer">
+                <div class="nav-buttons">
+                  <button class="nav-btn back" type="button">◂ Back</button>
+                  <button class="nav-btn next" type="button">Next ▸</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ds-section" aria-labelledby="h-expr">
+      <h2 id="h-expr">Expression sheets</h2>
+      <p class="ds-note">Each cell is labelled with the name the script uses for it, taken from the character's <code>expressions</code> map in <code>assets/js/dialogue-data.js</code>. Use this to check the names match the drawings.</p>
+      <div id="expressionSheets"></div>
+    </section>
+
+  </div>
+
+  <script src="assets/js/dialogue-data.js"></script>
+  <script src="assets/js/design-system.js"></script>
+</body>
+</html>

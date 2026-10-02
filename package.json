@@ -1,0 +1,12 @@
+{
+  "name": "matty-and-jules",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dialogue prototype and design system for the Character Expression Template Kit.",
+  "scripts": {
+    "tokens": "node scripts/build-tokens.js",
+    "tokens:check": "node scripts/build-tokens.js --check",
+    "serve": "npx --yes serve ."
+  },
+  "engines": { "node": ">=16" }
+}

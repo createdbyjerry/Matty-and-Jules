@@ -1,0 +1,19 @@
+# Fails the build if assets/css/tokens.css doesn't match tokens/tokens.json,
+# so a token edit can't be merged without regenerating the CSS.
+name: Tokens check
+
+on:
+  push:
+    paths: ["tokens/**", "assets/css/tokens.css", "scripts/build-tokens.js"]
+  pull_request:
+    paths: ["tokens/**", "assets/css/tokens.css", "scripts/build-tokens.js"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm run tokens:check
