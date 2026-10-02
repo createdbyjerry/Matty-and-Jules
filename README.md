@@ -4,7 +4,7 @@ A small browser-based dialogue scene built with the **Character Expression Templ
 
 - **Play the prototype:** `https://<your-username>.github.io/<repo-name>/`
 - **Browse the design system:** `https://<your-username>.github.io/<repo-name>/design-system.html`
-- **Get the kit:** Character Expression Template Kit on itch.io <!-- TODO: add itch.io link -->
+- **Get the kit:** [Character Expression Template Kit on itch.io](https://createdbyjerry.itch.io/character-expression-template-kit)
 
 No framework and no build step for the game itself: it's plain HTML, CSS and JavaScript. The only script is the one that turns the design tokens into CSS.
 
@@ -31,7 +31,8 @@ No framework and no build step for the game itself: it's plain HTML, CSS and Jav
 │   │   └── design-system.js    Renders the design system page
 │   └── images/
 │       ├── matty-expression-sheet.png
-│       └── jules-expression-sheet.png
+│       ├── jules-expression-sheet.png
+│       └── kit-thumbnail.png   Thumbnail for the itch.io promo card
 ├── .github/workflows/
 │   └── tokens-check.yml        CI check that tokens.css is up to date
 ├── .nojekyll                   Tells GitHub Pages to serve files as-is
@@ -119,7 +120,7 @@ Because `--layout-char-h` and `--layout-name-inset` are defined in terms of `--l
 | `color` | Page, panel, ink and accent colours, plus each character's name-tag colour |
 | `font` | Display (Fraunces), body (Work Sans) and mono (JetBrains Mono) stacks |
 | `radius` | Corner radius for cover cards, the dialogue box and controls |
-| `layout` | Portrait size, inset and how far portraits overlap the dialogue box |
+| `layout` | Portrait size, inset, how far portraits overlap the dialogue box, and the promo card's thumbnail size and offset |
 | `motion` | Timing and easing of the speaker reveal |
 
 Fonts are loaded from Google Fonts in the `<head>` of each page. If you change a font token to a different family, update that link too.
@@ -163,6 +164,12 @@ If a sheet's poses are in a different order, give that character its own map ins
 
 ---
 
+## Promo card
+
+A small card pinned to the top right of every screen links to the kit on itch.io. Its markup is the `.promo-card` link at the top of `index.html`; change the `href`, title or price there. The thumbnail is `assets/images/kit-thumbnail.png`, shown at 124 × 124 (`layout.promo-thumb`). On phones the thumbnail shrinks to 72px and the card scrolls with the page so it doesn't cover the portraits.
+
+---
+
 ## Deploying to GitHub Pages
 
 1. Push the repo to GitHub.
@@ -184,4 +191,4 @@ All paths in the project are relative, so it works under a repo sub-path without
 
 ## Credits
 
-Character art from the **Character Expression Template Kit**, available free on itch.io. <!-- TODO: add itch.io link and license terms -->
+Character art from the [Character Expression Template Kit](https://createdbyjerry.itch.io/character-expression-template-kit), available free on itch.io. <!-- TODO: add license terms -->

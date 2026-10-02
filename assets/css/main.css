@@ -20,6 +20,8 @@ body{
   justify-content:center;
   min-height:100vh;
   padding: 32px 24px;
+  /* keep the centred content clear of the pinned promo card */
+  padding-top: calc(var(--layout-promo-thumb) + var(--layout-promo-offset) * 2 + 24px);
 }
 
 .screen{ display:none; width:100%; }
@@ -99,6 +101,84 @@ body{
 .primary-btn:hover{ background: var(--color-accent-dark); }
 .primary-btn:active{ transform: translateY(3px); box-shadow: 0 1px 0 var(--color-accent-dark); }
 .primary-btn:focus-visible{ outline: 2px solid var(--color-ink); outline-offset: 2px; }
+
+/* ================= PROMO CARD (pinned top right) ================= */
+.promo-card{
+  position: fixed;
+  top: var(--layout-promo-offset);
+  right: var(--layout-promo-offset);
+  z-index: 10;
+  display:flex;
+  align-items:center;
+  gap: 14px;
+  max-width: calc(100vw - var(--layout-promo-offset) * 2);
+  padding: 10px 16px 10px 10px;
+  background: var(--color-panel);
+  border: 1.5px solid var(--color-panel-edge);
+  border-radius: var(--radius-panel);
+  box-shadow: 0 4px 0 rgba(46,38,32,0.12);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+.promo-thumb{
+  flex: none;
+  width: var(--layout-promo-thumb);
+  height: var(--layout-promo-thumb);
+  border-radius: var(--radius-control);
+  border: 1.5px solid var(--color-panel-edge);
+  object-fit: cover;
+  display:block;
+}
+
+.promo-info{
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap: 6px;
+  min-width: 0;
+}
+
+.promo-title{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.2;
+}
+
+.promo-price{
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.promo-btn{
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align:center;
+  color: var(--color-accent-dark);
+  border: 1.5px solid var(--color-panel-edge);
+  border-radius: var(--radius-control);
+  padding: 8px 16px;
+  transition: background 80ms ease, color 80ms ease, border-color 80ms ease;
+}
+
+.promo-card:hover .promo-btn{
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-on-accent);
+}
+.promo-card:focus-visible{ outline: 2px solid var(--color-ink); outline-offset: 2px; }
+
+@media (prefers-reduced-motion: reduce){
+  .promo-btn{ transition: none; }
+}
 
 /* ================= DIALOGUE SCREEN ================= */
 .stage{
@@ -277,4 +357,9 @@ body{
   .cover{ padding: 36px 24px 32px; }
   .cover h1{ font-size: 2.1rem; }
   .cover-portrait{ width: 110px; height: calc(110px * 682 / 436); }
+
+  .promo-card{ position: absolute; gap: 10px; padding: 8px 12px 8px 8px; }
+  .promo-title{ font-size: 0.95rem; }
+  .promo-price{ font-size: 0.85rem; }
+  .promo-btn{ margin-top: 0; padding: 6px 12px; }
 }
