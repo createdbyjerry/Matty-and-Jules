@@ -36,6 +36,8 @@
   --layout-char-inset: 28px; /* Distance from the dialogue box edge to a portrait */
   --layout-overlap: 80px; /* How far portraits sit over the dialogue box */
   --layout-name-inset: calc(var(--layout-char-w) + var(--layout-char-inset) + 18px); /* Header padding that clears the portraits */
+  --layout-promo-thumb: 124px; /* Thumbnail size on the itch.io promo card */
+  --layout-promo-offset: 16px; /* Distance of the promo card from the top and right edges */
 
   /* motion */
   --motion-reveal-duration: 600ms; /* Speaker, name tag and line fade-in */
@@ -57,5 +59,7 @@
     --layout-overlap: 0px;
     --layout-char-w: min(40vw, 170px);
     --layout-name-inset: 16px;
+    --layout-promo-thumb: 72px;
+    --layout-promo-offset: 12px;
   }
 }

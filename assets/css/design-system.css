@@ -150,6 +150,11 @@ code{
 }
 .ds-component--wide{ grid-column: 1 / -1; }
 .ds-row{ display:flex; flex-wrap:wrap; gap: 12px; align-items:center; }
+.promo-card.ds-static{
+  position: static;
+  display: inline-flex;
+  max-width: 100%;
+}
 .name-tag.ds-static{
   position: static;
   transform: none;
